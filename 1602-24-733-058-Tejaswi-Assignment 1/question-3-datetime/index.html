@@ -1,1 +1,31 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Current Date and Time</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+    </style>
+</head>
+<body>
+    <div id="datetime"></div>
+
+    <script>
+        const now = new Date();
+        const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        
+        const dayOfWeek = days[now.getDay()];
+        const currentDate = now.toLocaleDateString();
+        const currentTime = now.toLocaleTimeString();
+        const currentYear = now.getFullYear();
+
+        document.getElementById("datetime").innerHTML = `
+            <p><strong>Day:</strong> ${dayOfWeek}</p>
+            <p><strong>Date:</strong> ${currentDate}</p>
+            <p><strong>Time:</strong> ${currentTime}</p>
+            <p><strong>Year:</strong> ${currentYear}</p>
+        `;
+    </script>
+</body>
+</html>
